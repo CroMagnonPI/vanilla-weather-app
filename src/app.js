@@ -26,6 +26,7 @@ function displayTemp(response){
     let precipitation = document.querySelector("#precipitation");
     let humidity = document.querySelector("#humidity");
     let windSpeed = document.querySelector("#wind-speed");
+    let currentWeatherImg = document.querySelector("#weather-img");
 
     currentTemp.innerHTML = Math.round(response.data.main.temp);
     city.innerHTML = response.data.name;
@@ -34,6 +35,8 @@ function displayTemp(response){
     precipitation.innerHTML = response.data.clouds.all;
     humidity.innerHTML = response.data.main.humidity;
     windSpeed.innerHTML = Math.round(response.data.wind.speed);
+    currentWeatherImg.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    currentWeatherImg.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "d965f5e3fcb1a2054c7f5ac431fe9773"; 
