@@ -38,9 +38,19 @@ function displayTemp(response){
     currentWeatherImg.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     currentWeatherImg.setAttribute("alt", response.data.weather[0].description);
 }
+function search(currentCity){
+    let apiKey = "d965f5e3fcb1a2054c7f5ac431fe9773"; 
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(displayTemp)
+}
 
-let apiKey = "d965f5e3fcb1a2054c7f5ac431fe9773"; 
-let currentCity = "Tacoma";
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=metric`;
+function inputCity(event){
+    event.preventDefault();
+    let cityInput = document.querySelector("#search-city");
+    search(cityInput.value);
+   }
 
-axios.get(apiURL).then(displayTemp)
+search("Tacoma");
+
+let form = document.querySelector("#search-form")
+form.addEventListener("submit", inputCity)

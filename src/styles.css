@@ -47,10 +47,11 @@ li:first-letter{
     margin-bottom: 20px;
 }
 
-.weather-temp img {
+.weather-temp.img {
 margin-right: 3px;
 height: 64px;
 width: 64px;}
+
 
 .weather-temp strong{
     color: rgb(33,33,33);
@@ -63,3 +64,6 @@ width: 64px;}
     font-size: 16px;
     top: -30px;
 }
+.float-left {
+    float: left;
+  }

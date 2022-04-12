@@ -18,27 +18,47 @@
 <div class="container">
     <div class="weather-app-wrapper">
 <div class="weather-app">
+  <form id="search-form" class="mb-3">
+  <div class="row">
+    <div class="col-9">
+      <input type="search" 
+      placeholder="Enter a city" 
+      class="form-control"
+      id="search-city"
+      autocomplete="off" />
+    </div>
+    <div class="col-3">
+      <input type="submit" 
+      value="Search" 
+      class="btn btn-primary w-100"/>
+    </div>   
+    </div>
+    </form>
+  
+  
   <div class="location-overview">
     <h1 id="city">
     </h1>
     <ul>
-        <li id="date"> Sunday 03:45</li>
+        
+        <li>Last updated: <span id="date"> </span></li>
         <li id="weather-description">Cloudy</li>
     </ul>
   </div>
     <div class="row">
         <div class="col-6">
             <div class="clearfix weather-temp">
-              <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" 
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" 
               alt="rainy"
+              id ="weather-img"
               class="float-left"
-              id ="weather-img">
+              >
                 <strong id="current-temp"></strong>
                 <span class="temp-units">°C | <a href="#">°F</a></span>
             </div>
           </div>
     <div class="col-6">
-<ul>
+<ul class="weather-info">
     <li>Precipitation: <span id="precipitation"></span>%</li>
     <li>Humidity: <span id="humidity"></span>%</li>
     <li>Wind: <span id="wind-speed"></span> <small>km/h</small></li>
