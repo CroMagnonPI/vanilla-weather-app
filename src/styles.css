@@ -64,6 +64,13 @@ width: 64px;}
     font-size: 16px;
     top: -30px;
 }
+.temp-units.active {
+    color: rgb(33,33,33);
+    cursor: default;
+}
+.temp-units.active:hover{
+    text-decoration: none;
+}
 .float-left {
     float: left;
   }

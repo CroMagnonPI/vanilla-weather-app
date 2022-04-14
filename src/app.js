@@ -28,6 +28,8 @@ function displayTemp(response){
     let windSpeed = document.querySelector("#wind-speed");
     let currentWeatherImg = document.querySelector("#weather-img");
 
+    celsiusTemp = response.data.main.temp;
+
     currentTemp.innerHTML = Math.round(response.data.main.temp);
     city.innerHTML = response.data.name;
     todaysDate.innerHTML = formatDate(response.data.dt * 1000)
@@ -52,13 +54,26 @@ function inputCity(event){
 
   function displayFarenheitTemp(event) {
       event.preventDefault();
-      alert("test")
+      let fahrenheitTemp = (celsiusTemp*9) / 5 +32;
+      let currentTemp = document.querySelector("#current-temp");
+      currentTemp.innerHTML = Math.round(fahrenheitTemp);
   }
-   
-search("Tacoma");
+
+  function displayCelsiusTemp(event) {
+    event.preventDefault();
+    let currentTemp = document.querySelector("#current-temp");
+    currentTemp.innerHTML = Math.round(celsiusTemp);
+}  
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form")
 form.addEventListener("submit", inputCity)
 
 let fahrenheitUnit = document.querySelector("#fahrenheitUnit");
 fahrenheitUnit.addEventListener("click", displayFarenheitTemp)
+
+let celsiusUnit = document.querySelector("#celsiusUnit");
+celsiusUnit.addEventListener("click", displayCelsiusTemp);
+
+search("Tacoma");
