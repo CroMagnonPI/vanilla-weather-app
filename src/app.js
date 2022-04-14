@@ -50,7 +50,15 @@ function inputCity(event){
     search(cityInput.value);
    }
 
+  function displayFarenheitTemp(event) {
+      event.preventDefault();
+      alert("test")
+  }
+   
 search("Tacoma");
 
 let form = document.querySelector("#search-form")
 form.addEventListener("submit", inputCity)
+
+let fahrenheitUnit = document.querySelector("#fahrenheitUnit");
+fahrenheitUnit.addEventListener("click", displayFarenheitTemp)
