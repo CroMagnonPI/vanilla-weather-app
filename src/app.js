@@ -18,6 +18,25 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(){
+    let weatherForecast = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let forecastDays = ["Sunday", "Monday","Tuesday","Wednesday","Thursday"];
+    forecastDays.forEach(function (forecastDay) {
+    forecastHTML= forecastHTML + ` 
+      <div class="col-2">
+      <div class="weather-forecast-date">${forecastDay}</div>
+      <img src="#" alt="#" width="36"/>
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temp-high">18°</span><span class="weather-forecast-temp-low">12°</span></div>
+    </div>
+  </div>`;
+    });
+  forecastHTML = forecastHTML + `</div>`
+  weatherForecast.innerHTML = forecastHTML;
+    
+}
+
 function displayTemp(response){
     let currentTemp = document.querySelector("#current-temp");
     let city = document.querySelector("#city");
@@ -64,6 +83,7 @@ function inputCity(event){
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = Math.round(celsiusTemp);
 }  
+displayForecast();
 
 let celsiusTemp = null;
 
