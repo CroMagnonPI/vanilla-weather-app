@@ -59,10 +59,11 @@ width: 64px;}
     line-height: 1;
     font-weight: 400;
 }
+
 .temp-units {
     position: relative;
     font-size: 16px;
-    top: -30px;
+    top: -18px;
 }
 .temp-units.active {
     color: rgb(33,33,33);
