@@ -75,7 +75,10 @@ width: 64px;}
 .float-left {
     float: left;
   }
-
+.footer {
+    position: relative;
+    padding-left: 50px;
+}
 .weather-forecast {
     margin-top: 20px;
     text-align: center;
